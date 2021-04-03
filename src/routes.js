@@ -5,12 +5,16 @@ const views = __dirname + "/views/";
 
 const profile ={
     name: "Valirio",
-    avatar: "https://avatars.githubusercontent.com/u/16794865?v=4",
+    avatar: "https://github.com/valirio.png",
     "monthly-budget":3000,
     "days-per-week": 5,
     "hours-per-day": 5,
     "vacation-per-year": 4
 
+}
+
+const job = {
+    
 }
 
 routes.get('/', (request, response) => response.render(views + "index"));
