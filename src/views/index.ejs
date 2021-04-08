@@ -34,12 +34,17 @@
           <img id="logo" src="/images/logo.svg" alt="Logo" />
           <span id="notification">
             <img src="/images/alert-octagon.svg" alt="Alerta" />
-            Você tem 2 horas livres no seu dia
+            <% if(freeHours <= 0){%>
+              Você tem <%=freeHours%> horas livres no seu dia
+            <%} else{%>
+              Você não tem horas livres.
+            <%}%>
           </span>
           <a href="/profile" id="avatar-profile">
             <p><%= profile.name%> <span>Ver perfil</span></p>
             <img
               src="<%= profile.avatar %>" 
+              alt="Avatar"
             />
           </a>
         </section>
@@ -51,15 +56,15 @@
 
           <div class="info">
             <div class="total">
-              <strong>12</strong>
+              <strong><%=statusCount.total%></strong>
               Projetos ao total
             </div>
             <div class="in-progress">
-              <strong>7</strong>
+              <strong><%=statusCount.progress%></strong>
               Em andamento
             </div>
             <div class="finished">
-              <strong>4</strong>
+              <strong><%=statusCount.done%></strong>
               Encerrados
             </div>
           </div>
@@ -90,11 +95,11 @@
               <div class="deadline column">
                 <span>Prazo</span>
                 <p>
-                  <% if(job.status === 'done') {%>
-                    <%= job.remaining %> Dias para Entrega
-                  <% }else{ %>
-                    Prazo Encerrado
-                  <%}%>
+                  <% if(job.status === 'progress') { %>
+                    <%= job.remaining %>  dias para a entrega
+                  <% } else { %>
+                    Prazo encerrado
+                  <% } %> 
                 </p>
               </div>
               <div class="amount column">
