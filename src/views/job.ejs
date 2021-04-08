@@ -25,11 +25,15 @@
   </head>
   <body id="page-job">
     
-    <%- include('parts/page-header', {title: 'Adicionar Novo Job'}) %> 
+    <%- include('parts/page-header', { title: 'Adicionar novo job'}) %>
 
     <div class="container flex animate-up delay-2">
       <main>
-        <form id="form-job" action="/job" method="POST">
+        
+        <form id="form-job" 
+          method="post" 
+          action="/job">
+        
           <fieldset>
             <legend>Dados do Job</legend>
             <div class="separator light"></div>
@@ -64,7 +68,7 @@
         </form>
       </main>
       <aside class="card">
-        <img src="./images/money-gray.svg" alt="Imagem de Dinheiro">
+        <img src="/images/money-gray.svg" alt="Imagem de Dinheiro">
         <p>
           Preencha os dados ao lado para
           ver o valor do projeto
@@ -79,7 +83,7 @@
             href="/" 
             class="button gray">
             <img 
-              src="./images/trash-24.svg" 
+              src="/images/trash-24.svg" 
               alt="Cancelar cadastro" 
               title="Cancelar cadastro">
           </a>

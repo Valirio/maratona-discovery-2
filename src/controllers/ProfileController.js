@@ -2,11 +2,11 @@ const Profile = require('../model/Profile');
 
 module.exports = {
 
-    async index(request, response){
-        return response.render("profile", {profile: await Profile.get()})
+    async index(req, res){
+        return res.render("profile", {profile: await Profile.get()})
     },
-    async update(request, response){
-        const data = request.body;
+    async update(req, res){
+        const data = req.body;
 
         const weekPerYear = 52;
 
@@ -22,10 +22,10 @@ module.exports = {
 
         Profile.update({
             ...profile,
-            ...request.body,
+            ...req.body,
             "value-hour": valueHour
         })
 
-        return response.redirect('/profile', {profile: Profile.get()});
+        return res.redirect('/profile');
     },
 }
