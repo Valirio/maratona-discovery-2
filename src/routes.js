@@ -4,7 +4,7 @@ const ProfileController = require('./controllers/ProfileController')
 const JobController = require('./controllers/JobController')
 const DashboardController = require('./controllers/DashboardController')
 
-routes.get('/', DashboardController.index)
+routes.get('/*index.html', DashboardController.index)
 routes.get('/job', JobController.create)
 routes.post('/job', JobController.save)
 routes.get('/job/:id', JobController.show)
