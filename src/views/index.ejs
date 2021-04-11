@@ -79,8 +79,8 @@
 
         <div class="cards">
 
-
-          <% jobs.forEach((job) => { %>
+          <%console.log(jobs); %> 
+          <%jobs.forEach((job) => { %>
 
             <div class="card <%= job.status %> " data-id="<%= job.id %>">
               <div class="id column"><%= job.id %> </div>
@@ -117,14 +117,8 @@
                 </button>
               </div>
             </div>
-            <!-- end card -->
-
-          <% }) %> 
-
-         
-
+          <% }) %>
         </div>
-        <!-- end cards -->
       </main>
     </div>
     <!-- end container -->

@@ -13,7 +13,8 @@ const initDb = {
                     days_per_week INT,
                     hours_per_day INT,
                     vacation_per_year INT,
-                    value_hour INT
+                    value_hour INT,
+                    total_value_done INT
                 );`
             );
 
@@ -23,6 +24,8 @@ const initDb = {
                     name TEXT, 
                     daily_hours INT,
                     total_hours INT,
+                    total_value_final INT,
+                    status INT, 
                     created_at DATETIME
                 );`
             );
@@ -37,8 +40,8 @@ const initDb = {
                     vacation_per_year,
                     value_hour
                 ) VALUES (
-                    "jakeliny",
-                    "https://avatars.githubusercontent.com/u/17316392",
+                    "Valirio",
+                    "https://github.com/Valirio.png",
                     3000,
                     5,
                     5,

@@ -1,0 +1,6 @@
+populacionar a tabela com dados iniciais para testes.
+editar a data de cadastro
+Totalizar separando em tres, total geral, total finalizado e total feito
+Totalizador do ja fieto deve se manter com o valor de quando foi finalizado e nao pode ser alterado ao mudar os caluclos de valor hora
+Criar login
+Criar um grafico com os valores no profile

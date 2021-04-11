@@ -51,3 +51,34 @@ aside p {
 main {
   flex: 1;
 }
+
+
+
+.total{
+  margin-top: 35px;
+  display: flex;
+  justify-content: flex-start;
+  
+}
+
+.total h1{
+  text-justify: auto;
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.total .card{
+  border: 1px solid #E1E3E6;
+  border-radius: .313rem;
+  width: 18rem;
+  margin-right: 3rem;
+  text-align: center;
+  padding: 2 2 ;
+}
+
+
+
+
+
+
+

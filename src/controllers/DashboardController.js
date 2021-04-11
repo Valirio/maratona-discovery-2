@@ -11,10 +11,10 @@ module.exports = {
         progress: 0,
         done: 0,
         total: jobs.length
-    }
+    };
 
     // total de horas por dia de cada Job em progresso
-    let jobTotalHours = 0
+    let jobTotalHours = 0;
 
     const updatedJobs = jobs.map((job) => {
       // ajustes no job
@@ -25,7 +25,7 @@ module.exports = {
       statusCount[status] += 1;
     
       // total de horas por dia de cada Job em progresso
-      jobTotalHours = status == 'progress' ? jobTotalHours + Number(job['daily-hours']) : jobTotalHours
+      jobTotalHours = status == 'progress' ? jobTotalHours + Number(job['daily-hours']) : jobTotalHours;
 
       return {
         ...job,

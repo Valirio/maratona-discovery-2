@@ -52,6 +52,7 @@ button.button {
 .button.red {
   background: var(--color-delete);
   color: var(--color-text);
+  margin-top: 1rem;
 }
 
 .button.red:hover {

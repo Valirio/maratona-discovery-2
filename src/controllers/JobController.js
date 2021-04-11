@@ -3,55 +3,59 @@ const JobUtils = require('../utils/JobUtils')
 const Profile = require('../model/Profile')
 
 module.exports = {
-    create(request, response) {
-      return response.render("job")
+    create(req, res) {
+      return res.render("job");
     },
 
-    async save(request, response) {
+    async save(req, res) {
       await Job.create({
-        name: request.body.name,
-        "daily-hours": request.body["daily-hours"], 
-        "total-hours": request.body["total-hours"], 
+        name: req.body.name,
+        "daily-hours": req.body["daily-hours"], 
+        "total-hours": req.body["total-hours"], 
         created_at: Date.now()
       });     
 
-      return response.redirect('/')
+      return res.redirect('/');
     },
 
     async show(req, res) {
-      const jobId = req.params.id
-      const jobs = await Job.get()
+      const jobId = req.params.id;
+      const jobs = await Job.get();
 
-      const job = jobs.find(job => Number(job.id) === Number(jobId))
+      const job = jobs.find(job => Number(job.id) === Number(jobId));
 
       if (!job) {
-        return res.send('Job not found!')
+        return res.send('Job not found!');
       }
 
-      const profile = await Profile.get()
+      const profile = await Profile.get();
 
-      job.budget = JobUtils.calculateBudget(job, profile["value-hour"])
+      job.budget = JobUtils.calculateBudget(job, profile["value-hour"]);
 
-      return res.render("job-edit", { job })
+      return res.render("job-edit", { job });
     },
 
     async update(req, res) {
-      const jobId = req.params.id
+      const jobId = req.params.id;
+      
+      console.log(req.body["created-at"]);
 
       const updatedJob = {
-        name: req.body.name,
-        "total-hours": req.body["total-hours"], 
-        "daily-hours": req.body["daily-hours"], 
-      }  
-      await Job.update(updatedJob, jobId)
+          name: req.body.name,
+          "total-hours": req.body["total-hours"], 
+          "daily-hours": req.body["daily-hours"],
+          created_at: req.body["created-at"] 
+        }  
+      await Job.update(updatedJob, jobId);
+      
 
-      res.redirect('/job/' + jobId)
+      res.redirect('/job/' + jobId);
     },
 
     async delete(req, res) {
-      const jobId = req.params.id
+      const jobId = req.params.id;
 
-      await Job.delete(jobId)
+      await Job.delete(jobId);
       
       return res.redirect('/')
     }
