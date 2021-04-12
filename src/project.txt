@@ -1,3 +1,4 @@
+tema dark
 populacionar a tabela com dados iniciais para testes.
 editar a data de cadastro
 Totalizar separando em tres, total geral, total finalizado e total feito
