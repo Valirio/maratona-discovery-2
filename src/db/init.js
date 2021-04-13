@@ -14,14 +14,15 @@ const initDb = {
                     hours_per_day INT,
                     vacation_per_year INT,
                     value_hour INT,
-                    total_value_done INT
+                    total_value_done INT,
+                    thema TEXT
                 );`
             );
 
             await db.exec(`
                 CREATE TABLE jobs (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    name TEXT, 
+                    name TEXT,
                     daily_hours INT,
                     total_hours INT,
                     total_value_final INT,
@@ -46,7 +47,17 @@ const initDb = {
                     5,
                     5,
                     4,
-                    70
+                    70,
+                    "dark"
+                ), (
+                    "Valirio2",
+                    "https://github.com/Valirio.png",
+                    1500,
+                    4,
+                    8,
+                    5,
+                    65,
+                    "light"
                 );`
             );
 
